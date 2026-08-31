@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SPSI propose des solutions de marquage et gravure laser haute performance en Tunisie : logos, numéros de série, QR Codes, codes-barres et traçabilité industrielle." />
+  <meta name="keywords" content="marquage laser Tunisie, gravure laser, marquage industriel, gravure métal, QR Code, traçabilité" />
+  <meta property="og:title" content="SPSI — Solutions de marquage laser haute performance" />
+  <meta property="og:description" content="Identifiez, personnalisez et tracez vos produits avec une précision professionnelle." />
+  <meta property="og:type" content="website" />
+  <title>SPSI — Solutions de marquage laser haute performance</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            display: ['Poppins', 'Inter', 'ui-sans-serif', 'sans-serif']
+          },
+          colors: {
+            spsi: {
+              purple: '#4D2A53',
+              plum: '#24152A',
+              gold: '#E6A800',
+              pink: '#E92E5B',
+              cream: '#FFF9EE'
+            }
+          },
+          boxShadow: {
+            gold: '0 0 45px rgba(230,168,0,.18)',
+            pink: '0 0 45px rgba(233,46,91,.18)'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, sans-serif; }
+    .font-display { font-family: Poppins, sans-serif; }
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .text-gradient {
+      background: linear-gradient(110deg, #fff 15%, #f4c443 55%, #ee3560 90%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .gold-gradient {
+      background: linear-gradient(135deg, #f9d66a, #e6a800 55%, #b97800);
+    }
+    .glass {
+      background: rgba(255,255,255,.065);
+      border: 1px solid rgba(255,255,255,.10);
+      backdrop-filter: blur(18px);
+    }
+    .service-card { transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease; }
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(230,168,0,.5);
+      box-shadow: 0 25px 60px rgba(0,0,0,.22);
+    }
+    .reveal { opacity: 0; transform: translateY(25px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.show { opacity: 1; transform: translateY(0); }
+    .orbital { animation: orbit 10s linear infinite; transform-origin: center; }
+    .orbital-reverse { animation: orbitReverse 14s linear infinite; transform-origin: center; }
+    .pulse-dot { animation: pulseDot 2s ease-in-out infinite; }
+    @keyframes orbit { to { transform: rotate(360deg); } }
+    @keyframes orbitReverse { to { transform: rotate(-360deg); } }
+    @keyframes pulseDot { 50% { transform: scale(1.35); opacity: .55; } }
+    .laser-line { animation: laser 2.6s ease-in-out infinite; }
+    @keyframes laser {
+      0%,100% { opacity:.15; transform: scaleX(.65); }
+      50% { opacity:1; transform: scaleX(1); }
+    }
+    .mobile-menu { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+    .mobile-menu.open { max-height: 500px; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+
+<body class="bg-white text-spsi-plum antialiased">
+  <!-- NAVBAR -->
+  <header id="navbar" class="fixed top-0 z-50 w-full transition-all duration-300">
+    <div class="mx-auto max-w-7xl px-5 lg:px-8">
+      <nav class="mt-4 flex items-center justify-between rounded-2xl border border-white/10 bg-spsi-plum/85 px-4 py-2.5 shadow-2xl backdrop-blur-xl lg:px-6">
+        <a href="#accueil" class="flex items-center gap-3">
+          <img src="assets/logo-spsi.png" alt="SPSI" class="h-14 w-14 object-contain" />
+          <div class="hidden sm:block">
+            <span class="font-display text-lg font-bold tracking-[.18em] text-white">SPSI</span>
+            <span class="block text-[9px] uppercase tracking-[.22em] text-white/50">Laser Solutions</span>
+          </div>
+        </a>
+
+        <div class="hidden items-center gap-7 lg:flex">
+          <a href="#accueil" class="nav-link text-sm font-medium text-white/80 hover:text-white">Accueil</a>
+          <a href="#apropos" class="nav-link text-sm font-medium text-white/80 hover:text-white">À propos</a>
+          <a href="#services" class="nav-link text-sm font-medium text-white/80 hover:text-white">Solutions</a>
+          <a href="#galerie" class="nav-link text-sm font-medium text-white/80 hover:text-white">Galerie</a>
+          <a href="#contact" class="rounded-xl gold-gradient px-5 py-3 text-sm font-bold text-spsi-plum shadow-gold hover:scale-[1.02] transition">Demander un devis</a>
+        </div>
+
+        <button id="menuBtn" class="rounded-xl border border-white/10 p-3 text-white lg:hidden" aria-label="Ouvrir le menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </nav>
+
+      <div id="mobileMenu" class="mobile-menu mt-2 rounded-2xl border border-white/10 bg-spsi-plum/95 px-5 backdrop-blur-xl lg:hidden">
+        <div class="flex flex-col gap-1 py-4">
+          <a href="#accueil" class="rounded-xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white">Accueil</a>
+          <a href="#apropos" class="rounded-xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white">À propos</a>
+          <a href="#services" class="rounded-xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white">Solutions</a>
+          <a href="#galerie" class="rounded-xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white">Galerie</a>
+          <a href="#contact" class="mt-2 rounded-xl gold-gradient px-4 py-3 text-center font-bold text-spsi-plum">Demander un devis</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section id="accueil" class="relative min-h-screen overflow-hidden bg-spsi-plum pt-32 text-white">
+      <div class="absolute inset-0 grid-bg opacity-60"></div>
+      <div class="absolute -left-32 top-20 h-96 w-96 rounded-full bg-spsi-pink/20 blur-[120px]"></div>
+      <div class="absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-spsi-gold/15 blur-[140px]"></div>
+
+      <div class="relative mx-auto grid max-w-7xl items-center gap-14 px-5 pb-24 pt-10 lg:grid-cols-[1.05fr_.95fr] lg:px-8 lg:pb-32">
+        <div class="reveal">
+          <div class="mb-7 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[.18em] text-white/70">
+            <span class="pulse-dot h-2 w-2 rounded-full bg-spsi-gold"></span>
+            Marquage laser professionnel
+          </div>
+
+          <h1 class="font-display max-w-3xl text-5xl font-extrabold leading-[1.04] tracking-tight sm:text-6xl lg:text-7xl">
+            La précision qui <span class="text-gradient">marque</span> la différence.
+          </h1>
+
+          <p class="mt-7 max-w-2xl text-lg leading-8 text-white/65">
+            Identifiez, personnalisez et tracez vos produits avec des solutions de marquage laser haute performance, conçues pour les exigences des professionnels.
+          </p>
+
+          <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+            <a href="#contact" class="group inline-flex items-center justify-center gap-3 rounded-xl gold-gradient px-6 py-4 font-bold text-spsi-plum shadow-gold transition hover:-translate-y-0.5">
+              Demander un devis
+              <span class="transition group-hover:translate-x-1">→</span>
+            </a>
+            <a href="#services" class="inline-flex items-center justify-center gap-3 rounded-xl border border-white/15 bg-white/5 px-6 py-4 font-semibold text-white transition hover:bg-white/10">
+              Découvrir nos solutions
+            </a>
+          </div>
+
+          <div class="mt-10 flex flex-wrap gap-x-7 gap-y-3 text-sm text-white/50">
+            <span>✓ Ultra-précis</span>
+            <span>✓ Durable</span>
+            <span>✓ Sans consommables</span>
+            <span>✓ Partout en Tunisie</span>
+          </div>
+        </div>
+
+        <!-- Visual -->
+        <div class="reveal relative mx-auto w-full max-w-xl">
+          <div class="relative aspect-square overflow-hidden rounded-[2rem] border border-white/10 bg-white/[.035] shadow-2xl">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(230,168,0,.13),transparent_35%),radial-gradient(circle_at_20%_20%,rgba(233,46,91,.15),transparent_30%)]"></div>
+            <div class="absolute inset-[11%] rounded-full border border-spsi-gold/25 orbital"></div>
+            <div class="absolute inset-[20%] rounded-full border border-spsi-pink/25 orbital-reverse"></div>
+
+            <div class="absolute left-1/2 top-1/2 h-44 w-44 -translate-x-1/2 -translate-y-1/2 rounded-full bg-spsi-purple/40 blur-2xl"></div>
+
+            <div class="absolute left-1/2 top-1/2 flex h-36 w-36 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-3xl border border-white/10 bg-white/[.06] shadow-2xl backdrop-blur-xl">
+              <img src="assets/logo-spsi.png" alt="Logo SPSI" class="h-28 w-28 object-contain" />
+            </div>
+
+            <div class="absolute left-[13%] top-[23%] h-3 w-3 rounded-full bg-spsi-pink shadow-[0_0_22px_rgba(233,46,91,.9)]"></div>
+            <div class="absolute right-[15%] top-[31%] h-3 w-3 rounded-full bg-spsi-gold shadow-[0_0_22px_rgba(230,168,0,.9)]"></div>
+            <div class="absolute bottom-[18%] left-[26%] h-2.5 w-2.5 rounded-full bg-white shadow-[0_0_18px_white]"></div>
+
+            <div class="absolute bottom-7 left-7 right-7 rounded-2xl border border-white/10 bg-spsi-plum/75 p-4 backdrop-blur-xl">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-xs uppercase tracking-[.18em] text-white/40">Technologie</p>
+                  <p class="mt-1 font-semibold">Marquage permanent & précis</p>
+                </div>
+                <div class="rounded-xl bg-spsi-gold/10 p-3 text-spsi-gold">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M2 12h20"/><path d="M7 7l10 10M17 7L7 17"/></svg>
+                </div>
+              </div>
+              <div class="laser-line mt-4 h-px bg-gradient-to-r from-transparent via-spsi-gold to-transparent"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative border-t border-white/10 bg-white/[.025]">
+        <div class="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-white/10 px-5 lg:grid-cols-4 lg:px-8">
+          <div class="px-4 py-6 text-center lg:px-8"><strong class="block font-display text-2xl text-white">Ultra</strong><span class="text-xs uppercase tracking-widest text-white/40">Précision</span></div>
+          <div class="px-4 py-6 text-center lg:px-8"><strong class="block font-display text-2xl text-white">100%</strong><span class="text-xs uppercase tracking-widest text-white/40">Permanent</span></div>
+          <div class="px-4 py-6 text-center lg:px-8"><strong class="block font-display text-2xl text-white">0</strong><span class="text-xs uppercase tracking-widest text-white/40">Consommable</span></div>
+          <div class="col-span-2 px-4 py-6 text-center lg:col-span-1 lg:px-8"><strong class="block font-display text-2xl text-white">TN</strong><span class="text-xs uppercase tracking-widest text-white/40">Partout en Tunisie</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="apropos" class="bg-white py-24 lg:py-32">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="grid gap-14 lg:grid-cols-2 lg:items-center">
+          <div class="reveal">
+            <p class="text-sm font-bold uppercase tracking-[.22em] text-spsi-gold">SPSI</p>
+            <h2 class="mt-3 font-display text-4xl font-extrabold tracking-tight text-spsi-plum sm:text-5xl">
+              Votre partenaire en <span class="text-spsi-purple">marquage laser</span>.
+            </h2>
+            <p class="mt-6 text-lg leading-8 text-slate-600">
+              SPSI propose des solutions de marquage laser pensées pour les professionnels qui recherchent précision, durabilité et fiabilité.
+            </p>
+            <p class="mt-4 leading-7 text-slate-500">
+              Logos, numéros de série, références, textes, codes-barres ou QR Codes : le marquage est conçu pour rester net, lisible et résistant à l'usure.
+            </p>
+
+            <div class="mt-9 grid gap-4 sm:grid-cols-3">
+              <div class="rounded-2xl border border-slate-200 p-5">
+                <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-spsi-gold/10 text-spsi-gold">01</div>
+                <h3 class="font-bold text-spsi-plum">Précision</h3>
+                <p class="mt-2 text-sm leading-6 text-slate-500">Un rendu net et maîtrisé.</p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 p-5">
+                <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-spsi-pink/10 text-spsi-pink">02</div>
+                <h3 class="font-bold text-spsi-plum">Durabilité</h3>
+                <p class="mt-2 text-sm leading-6 text-slate-500">Une gravure permanente.</p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 p-5">
+                <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-spsi-purple/10 text-spsi-purple">03</div>
+                <h3 class="font-bold text-spsi-plum">Performance</h3>
+                <p class="mt-2 text-sm leading-6 text-slate-500">Rapide, fiable et sans consommables.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal relative">
+            <div class="absolute -inset-5 rounded-[2rem] bg-gradient-to-br from-spsi-gold/15 via-transparent to-spsi-pink/15 blur-2xl"></div>
+            <div class="relative overflow-hidden rounded-[2rem] bg-spsi-plum">
+              <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=85" alt="Technologie industrielle et marquage professionnel" class="h-[500px] w-full object-cover opacity-70" loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-spsi-plum via-transparent to-transparent"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-8">
+                <span class="rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-xs font-semibold text-white/80 backdrop-blur">Solutions professionnelles</span>
+                <p class="mt-4 max-w-md font-display text-2xl font-bold text-white">Une technologie pensée pour la qualité et la traçabilité.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="bg-slate-50 py-24 lg:py-32">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="reveal max-w-2xl">
+          <p class="text-sm font-bold uppercase tracking-[.22em] text-spsi-gold">Nos solutions</p>
+          <h2 class="mt-3 font-display text-4xl font-extrabold tracking-tight text-spsi-plum sm:text-5xl">Le marquage adapté à vos besoins.</h2>
+          <p class="mt-5 leading-7 text-slate-500">Des solutions pour identifier, personnaliser et tracer vos produits avec un rendu professionnel.</p>
+        </div>
+
+        <div class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <article class="service-card reveal rounded-3xl border border-slate-200 bg-white p-7">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-spsi-plum text-spsi-gold">
+              <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20h16M6 16l4-4 3 3 5-7"/><path d="M6 4h12v4H6z"/></svg>
+            </div>
+            <h3 class="mt-6 text-xl font-bold text-spsi-plum">Marquage laser</h3>
+            <p class="mt-3 leading-7 text-slate-500">Marquage précis et durable pour répondre aux exigences des professionnels.</p>
+          </article>
+
+          <article class="service-card reveal rounded-3xl border border-slate-200 bg-white p-7">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-spsi-gold/10 text-spsi-gold">
+              <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20h16"/><path d="M7 17V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v10"/><path d="M9 9h6M9 12h6"/></svg>
+            </div>
+            <h3 class="mt-6 text-xl font-bold text-spsi-plum">Gravure de logos</h3>
+            <p class="mt-3 leading-7 text-slate-500">Personnalisez vos produits avec votre identité visuelle et vos éléments graphiques.</p>
+          </article>
+
+          <article class="service-card reveal rounded-3xl border border-slate-200 bg-white p-7">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-spsi-pink/10 text-spsi-pink">
+              <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 5h5v5H5zM14 5h5v5h-5zM5 14h5v5H5z"/><path d="M14 14h2v2h-2zM17 17h2v2h-2z"/></svg>
+            </div>
+            <h3 class="mt-6 text-xl font-bold text-spsi-plum">QR Codes & codes-barres</h3>
+            <p class="mt-3 leading-7 text-slate-500">Des marquages lisibles pour faciliter l'identification et la traçabilité.</p>
+          </article>
+
+          <article class="service-card reveal rounded-3xl border border-slate-200 bg-white p-7">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-spsi-purple/10 text-spsi-purple">
+              <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M8 12h8"/></svg>
+            </div>
+            <h3 class="mt-6 text-xl font-bold text-spsi-plum">Numérotation</h3>
+            <p class="mt-3 leading-7 text-slate-500">Gravure de numéros de série, références et informations d'identification.</p>
+          </article>
+
+          <article class="service-card reveal rounded-3xl border border-slate-200 bg-white p-7">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-spsi-gold/10 text-spsi-gold">
+              <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 18V6h16v12z"/><path d="M8 15l2-6 2 6M14 15l2-6 2 6"/></svg>
+            </div>
+            <h3 class="mt-6 text-xl font-bold text-spsi-plum">Marquage industriel</h3>
+            <p class="mt-3 leading-7 text-slate-500">Une solution pensée pour les industries, ateliers de fabrication et sous-traitants.</p>
+          </article>
+
+          <article class="service-card reveal rounded-3xl border border-slate-200 bg-white p-7">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-spsi-pink/10 text-spsi-pink">
+              <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="8"/></svg>
+            </div>
+            <h3 class="mt-6 text-xl font-bold text-spsi-plum">Personnalisation</h3>
+            <p class="mt-3 leading-7 text-slate-500">Textes, références et éléments spécifiques adaptés à vos besoins.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MATERIALS -->
+    <section class="bg-spsi-plum py-24 text-white lg:py-28">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="grid gap-12 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
+          <div class="reveal">
+            <p class="text-sm font-bold uppercase tracking-[.22em] text-spsi-gold">Applications</p>
+            <h2 class="mt-3 font-display text-4xl font-extrabold sm:text-5xl">Un marquage sur vos matériaux.</h2>
+            <p class="mt-5 max-w-xl leading-7 text-white/55">Métal, plastique, bois, aluminium, inox et bien d'autres matériaux : choisissez une solution adaptée à votre application.</p>
+          </div>
+          <div class="reveal grid grid-cols-2 gap-3 sm:grid-cols-3">
+            <div class="glass rounded-2xl p-6"><span class="text-2xl">◈</span><p class="mt-5 font-bold">Métal</p></div>
+            <div class="glass rounded-2xl p-6"><span class="text-2xl">◇</span><p class="mt-5 font-bold">Plastique</p></div>
+            <div class="glass rounded-2xl p-6"><span class="text-2xl">✦</span><p class="mt-5 font-bold">Bois</p></div>
+            <div class="glass rounded-2xl p-6"><span class="text-2xl">◎</span><p class="mt-5 font-bold">Aluminium</p></div>
+            <div class="glass rounded-2xl p-6"><span class="text-2xl">◉</span><p class="mt-5 font-bold">Inox</p></div>
+            <div class="rounded-2xl border border-spsi-gold/30 bg-spsi-gold/10 p-6"><span class="text-2xl text-spsi-gold">+</span><p class="mt-5 font-bold">Et plus</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY -->
+    <section class="bg-white py-24 lg:py-32">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="reveal text-center">
+          <p class="text-sm font-bold uppercase tracking-[.22em] text-spsi-gold">Pourquoi SPSI</p>
+          <h2 class="mt-3 font-display text-4xl font-extrabold text-spsi-plum sm:text-5xl">Performance. Précision. Fiabilité.</h2>
+        </div>
+        <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="reveal rounded-3xl bg-slate-50 p-7"><span class="text-3xl text-spsi-gold">01</span><h3 class="mt-8 font-bold text-spsi-plum">Ultra-précision</h3><p class="mt-2 text-sm leading-6 text-slate-500">Un marquage net et maîtrisé.</p></div>
+          <div class="reveal rounded-3xl bg-slate-50 p-7"><span class="text-3xl text-spsi-pink">02</span><h3 class="mt-8 font-bold text-spsi-plum">Durabilité</h3><p class="mt-2 text-sm leading-6 text-slate-500">Une finition permanente et résistante.</p></div>
+          <div class="reveal rounded-3xl bg-slate-50 p-7"><span class="text-3xl text-spsi-purple">03</span><h3 class="mt-8 font-bold text-spsi-plum">Sans consommables</h3><p class="mt-2 text-sm leading-6 text-slate-500">Une technologie propre et fiable.</p></div>
+          <div class="reveal rounded-3xl bg-slate-50 p-7"><span class="text-3xl text-spsi-gold">04</span><h3 class="mt-8 font-bold text-spsi-plum">Partout en Tunisie</h3><p class="mt-2 text-sm leading-6 text-slate-500">Une intervention adaptée à vos besoins.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="galerie" class="bg-slate-50 py-24 lg:py-32">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+          <div class="reveal">
+            <p class="text-sm font-bold uppercase tracking-[.22em] text-spsi-gold">Galerie</p>
+            <h2 class="mt-3 font-display text-4xl font-extrabold text-spsi-plum sm:text-5xl">La précision en images.</h2>
+          </div>
+          <p class="reveal max-w-md text-sm leading-6 text-slate-500">Remplacez les images de démonstration par vos réalisations SPSI pour valoriser vos applications.</p>
+        </div>
+
+        <div class="mt-12 grid gap-4 md:grid-cols-12">
+          <div class="reveal group relative overflow-hidden rounded-3xl md:col-span-7 md:row-span-2">
+            <img src="https://images.unsplash.com/photo-1565439379115-99e1d5b8e6e5?auto=format&fit=crop&w=1400&q=85" alt="Équipement industriel" class="h-full min-h-[420px] w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+            <div class="absolute bottom-0 p-7 text-white"><span class="text-xs uppercase tracking-widest text-white/60">Application</span><h3 class="mt-2 text-xl font-bold">Marquage industriel</h3></div>
+          </div>
+          <div class="reveal group relative overflow-hidden rounded-3xl md:col-span-5">
+            <img src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?auto=format&fit=crop&w=1000&q=85" alt="Production industrielle" class="h-64 w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <div class="absolute bottom-5 left-5 text-white"><h3 class="font-bold">Production & traçabilité</h3></div>
+          </div>
+          <div class="reveal group relative overflow-hidden rounded-3xl md:col-span-5">
+            <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1000&q=85" alt="Atelier professionnel" class="h-64 w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <div class="absolute bottom-5 left-5 text-white"><h3 class="font-bold">Ateliers professionnels</h3></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-white px-5 py-20 lg:px-8">
+      <div class="mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-spsi-plum px-7 py-14 text-center shadow-2xl sm:px-12 lg:py-20">
+        <div class="mx-auto max-w-3xl">
+          <p class="text-sm font-bold uppercase tracking-[.22em] text-spsi-gold">Votre projet commence ici</p>
+          <h2 class="mt-4 font-display text-4xl font-extrabold text-white sm:text-5xl">Besoin d'une démonstration ou d'un devis gratuit ?</h2>
+          <p class="mx-auto mt-5 max-w-2xl leading-7 text-white/55">Parlez-nous de votre besoin et découvrez la solution de marquage laser adaptée à votre activité.</p>
+          <a href="#contact" class="mt-8 inline-flex rounded-xl gold-gradient px-7 py-4 font-bold text-spsi-plum shadow-gold transition hover:-translate-y-0.5">Contactez SPSI</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="bg-slate-50 py-24 lg:py-32">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="grid gap-12 lg:grid-cols-[.8fr_1.2fr]">
+          <div class="reveal">
+            <p class="text-sm font-bold uppercase tracking-[.22em] text-spsi-gold">Contact</p>
+            <h2 class="mt-3 font-display text-4xl font-extrabold text-spsi-plum sm:text-5xl">Parlons de votre projet.</h2>
+            <p class="mt-5 leading-7 text-slate-500">Demandez une démonstration, une information ou un devis gratuit.</p>
+
+            <div class="mt-9 space-y-5">
+              <a href="tel:+21697443372" class="flex items-center gap-4 rounded-2xl bg-white p-4 shadow-sm transition hover:shadow-md">
+                <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-spsi-gold/10 text-spsi-gold">☎</span>
+                <div><span class="block text-xs uppercase tracking-wider text-slate-400">Téléphone</span><strong class="text-spsi-plum">+216 97 443 372</strong></div>
+              </a>
+              <a href="mailto:spsi042019@gmail.com" class="flex items-center gap-4 rounded-2xl bg-white p-4 shadow-sm transition hover:shadow-md">
+                <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-spsi-pink/10 text-spsi-pink">✉</span>
+                <div><span class="block text-xs uppercase tracking-wider text-slate-400">Email</span><strong class="break-all text-spsi-plum">spsi042019@gmail.com</strong></div>
+              </a>
+              <div class="flex items-center gap-4 rounded-2xl bg-white p-4 shadow-sm">
+                <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-spsi-purple/10 text-spsi-purple">TN</span>
+                <div><span class="block text-xs uppercase tracking-wider text-slate-400">Zone d'intervention</span><strong class="text-spsi-plum">Partout en Tunisie</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <form id="contactForm" class="reveal rounded-[2rem] border border-slate-200 bg-white p-6 shadow-xl sm:p-8">
+            <div class="grid gap-5 sm:grid-cols-2">
+              <label class="block"><span class="mb-2 block text-sm font-semibold text-spsi-plum">Nom *</span><input required name="nom" type="text" class="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 outline-none transition focus:border-spsi-gold focus:ring-4 focus:ring-spsi-gold/10" placeholder="Votre nom"></label>
+              <label class="block"><span class="mb-2 block text-sm font-semibold text-spsi-plum">Entreprise</span><input name="entreprise" type="text" class="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 outline-none transition focus:border-spsi-gold focus:ring-4 focus:ring-spsi-gold/10" placeholder="Votre entreprise"></label>
+              <label class="block"><span class="mb-2 block text-sm font-semibold text-spsi-plum">Téléphone *</span><input required name="telephone" type="tel" class="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 outline-none transition focus:border-spsi-gold focus:ring-4 focus:ring-spsi-gold/10" placeholder="+216"></label>
+              <label class="block"><span class="mb-2 block text-sm font-semibold text-spsi-plum">Email *</span><input required name="email" type="email" class="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 outline-none transition focus:border-spsi-gold focus:ring-4 focus:ring-spsi-gold/10" placeholder="vous@entreprise.tn"></label>
+              <label class="block sm:col-span-2"><span class="mb-2 block text-sm font-semibold text-spsi-plum">Type de besoin</span><select name="besoin" class="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 outline-none focus:border-spsi-gold"><option>Marquage laser</option><option>Gravure de logo</option><option>QR Code / code-barres</option><option>Numérotation / traçabilité</option><option>Autre besoin</option></select></label>
+              <label class="block sm:col-span-2"><span class="mb-2 block text-sm font-semibold text-spsi-plum">Votre message *</span><textarea required name="message" rows="5" class="w-full resize-none rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 outline-none transition focus:border-spsi-gold focus:ring-4 focus:ring-spsi-gold/10" placeholder="Décrivez votre besoin..."></textarea></label>
+            </div>
+            <button type="submit" class="mt-6 w-full rounded-xl gold-gradient px-6 py-4 font-bold text-spsi-plum shadow-gold transition hover:-translate-y-0.5">Envoyer ma demande</button>
+            <p id="formMessage" class="mt-4 hidden rounded-xl bg-emerald-50 p-3 text-center text-sm font-medium text-emerald-700"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-spsi-plum text-white">
+    <div class="mx-auto max-w-7xl px-5 py-14 lg:px-8">
+      <div class="grid gap-10 md:grid-cols-3">
+        <div>
+          <img src="assets/logo-spsi.png" alt="SPSI" class="h-20 w-20 object-contain" />
+          <p class="mt-4 max-w-sm text-sm leading-6 text-white/45">Solutions de marquage laser haute performance pour les professionnels en Tunisie.</p>
+        </div>
+        <div>
+          <h3 class="font-bold">Navigation</h3>
+          <div class="mt-4 grid grid-cols-2 gap-3 text-sm text-white/55">
+            <a href="#accueil" class="hover:text-white">Accueil</a><a href="#apropos" class="hover:text-white">À propos</a>
+            <a href="#services" class="hover:text-white">Solutions</a><a href="#galerie" class="hover:text-white">Galerie</a>
+            <a href="#contact" class="hover:text-white">Contact</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-bold">Contact</h3>
+          <div class="mt-4 space-y-3 text-sm text-white/55">
+            <a href="tel:+21697443372" class="block hover:text-white">+216 97 443 372</a>
+            <a href="mailto:spsi042019@gmail.com" class="block hover:text-white">spsi042019@gmail.com</a>
+            <span class="block">Intervention partout en Tunisie</span>
+          </div>
+        </div>
+      </div>
+      <div class="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-white/35 sm:flex-row sm:items-center sm:justify-between">
+        <span>© 2026 SPSI — Tous droits réservés.</span>
+        <span>Marquage laser • Gravure • Traçabilité</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp -->
+  <a href="https://wa.me/21697443372" target="_blank" rel="noopener noreferrer" aria-label="Contacter SPSI sur WhatsApp"
+     class="fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-2xl transition hover:scale-105">
+    <svg width="27" height="27" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.5 4.1 1.6 5.9L.2 24l6.5-1.7c1.8 1 3.5 1.5 5.4 1.5h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.1-1.2-6.2-3.5-8.5Zm-8.4 18.3h-.1c-1.7 0-3.3-.5-4.7-1.3l-.3-.2-3.8 1 1-3.7-.2-.4a9.8 9.8 0 1 1 8.1 4.6Zm5.4-7.4c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.6-1.8-1.8-2.1-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.5-.1-.7-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.6 0 1.5 1.1 3 1.2 3.2.2.2 2.2 3.4 5.4 4.7.8.3 1.4.5 1.9.6.8.3 1.6.2 2.2.1.7-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3Z"/></svg>
+  </a>
+
+  <script>
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    document.querySelectorAll('#mobileMenu a').forEach(a => a.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }));
+    menuBtn.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+
+    // Navbar shadow after scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scale-[.99]', window.scrollY > 30);
+    }, { passive: true });
+
+    // Reveal animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Demo form: replace with backend/API/EmailJS/Brevo/etc.
+    const form = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      formMessage.textContent = "Merci ! Votre demande a bien été enregistrée. Connectez ce formulaire à votre service d'envoi d'e-mails pour la mise en production.";
+      formMessage.classList.remove('hidden');
+      form.reset();
+    });
+  </script>
+</body>
+</html>
